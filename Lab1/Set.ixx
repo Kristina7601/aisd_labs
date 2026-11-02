@@ -225,8 +225,14 @@ std::ostream& operator<<(std::ostream& os, const Set<T>& set) {
 	os << "}";
 	return os;
 }
-
 export template <typename T>
-bool is_subset(const Set<T>& first, const Set<T>& second) {
-	return (first - second).is_empty();
+bool is_subset(const T*first_arr,size_t first_count, const T*second_arr, size_t second_count) {
+	Set<T>second_set(second_arr, second_count);
+	for (size_t i = 0; i < first_count; ++i) {
+		if (!second_set.contains(first_arr[i]))
+		{
+			return false;
+		}
+	}
+	return true;
 }
