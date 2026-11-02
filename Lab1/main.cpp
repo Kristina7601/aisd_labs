@@ -78,17 +78,17 @@ int main() {
         std::cout << "pair: " << set_pair << "\n\n";
 
         std::cout << "7: Task solution: subset check\n";
-        int first_arr[] = { 1, 3 };
-        int second_arr[] = { 3, 1, 2, 4 };
+        int first_arr[] = { 1, 3,1,1 };
+        int second_arr[] = { 3,1,1,1,1,1, 1, 2, 4 };
         Set<int> first(first_arr, 2);
         Set<int> second(second_arr, 4);
         std::cout << "First: " << first << "\n";
         std::cout << "Second: " << second << "\n";
-        std::cout << "Are all elements of the first in the second? (expected true): " << is_subset(first, second) << "\n";
+        std::cout << "Are all elements of the first in the second? (expected true): " << is_subset(first_arr,4, second_arr,9) << "\n";
 
         int bad_arr[] = { 1, 7 };
         Set<int> bad(bad_arr, 2);
-        std::cout << "Is {1, 7} a subset of the second? (expected false): " << is_subset(bad, second) << "\n\n";
+        std::cout << "Is {1, 7} a subset of the second? (expected false): " << is_subset(bad_arr,2, second_arr,4) << "\n\n";
 
         std::cout << "8: Random object and method demonstration\n";
         Set<int> set_rand(5, 1, 20);
